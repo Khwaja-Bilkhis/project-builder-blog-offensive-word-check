@@ -35,6 +35,7 @@ public class LoginController extends HttpServlet {
 		ValidateUser validateUser = new ValidateUser();
 		if(validateUser.validate(email,password)) {
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/blogView.jsp");
+			System.out.println("validated");
 			rd.forward(request, response);
 		}else
 		{

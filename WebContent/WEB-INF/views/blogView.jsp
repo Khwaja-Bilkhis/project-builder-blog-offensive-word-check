@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +8,7 @@
     <title>Code Wall</title>
     <link rel="stylesheet" href="./assets/blog.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+	<script type="text/javascript" src="./script/app.js"></script>
 </head>
 <body>
  <nav>
@@ -23,8 +23,25 @@
     </nav>
     <div class="body-div1">
         <div>Your Blog Posts</div>
-        <button class="button" id="addBlog" ><i class="fas fa-plus-circle"></i>Add New Post</button>
+        <button class="button" id="addBlog" onclick="addPost()"><i class="fas fa-plus-circle"></i>Add New Post</button>
     </div>
+    
+    <script type="text/javascript">
+    function addPost(){
+
+     	console.log("onclick");
+     	document.getElementById('popup').style.display = "block";
+     } 
+    function div_hide(){
+    	 document.getElementById('popup').style.display = "none";
+    	 }
+    function editPost(){
+     	
+     	document.getElementById('popup').style.display = "block";
+     	
+     }
+    
+    </script>
 <div id="popup">
 <!-- Popup Div Starts Here -->
 <div id="popupContact">
@@ -42,8 +59,11 @@
 <input id="java" type="radio" name="subject"/>
 <input id="js" type="radio" name="subject"/> -->
 <input type="hidden" name="selectedAnswers" id="answers"/>
-<button id="post" type="submit" >POST</button>
+<button id="post" type="submit">POST</button>
 </form>
+<script type="text/javascript">
+</script>
+
 </div>
 </div>
 
@@ -58,11 +78,11 @@
                 <p>Posted on <b>${blog.getDate()}</b> </p>
             </div>
             <div class="card-buttons">
-                <button type="button" id="edit" value="edit">EDIT</button> <span>|</span><button id="delete" value="delete">DELETE</button>
+                <button type="button" id="edit" onclick="editPost()" value="edit">EDIT</button> <span>|</span><button id="delete" value="delete">DELETE</button>
             </div>
         </div>
 </div>
-<div clas="body-div3">
+<div class="body-div3">
 <h1>${error}</h1>
 </div>
     <!--         <div class="article-card">
@@ -140,6 +160,17 @@
             </div>
         </div>
     </div> -->
-    <script src="./script/app.js" type="text/javascript"></script>
+ <script type="text/javascript">
+//get the add button value to  
+  
+
+
+ //Function to Hide Popup
+
+
+ // When submit button is clicked store the text field value to a hidden value and post the form data to server
+
+ </script>   
+    
 </body>
 </html>

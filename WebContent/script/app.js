@@ -8,6 +8,7 @@ let edit=document.getElementById("edit");
 
 
 addBlog.onclick = () =>{
+
 	console.log("onclick");
 	document.getElementById('popup').style.display = "block";
 } 
